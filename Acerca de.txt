@@ -1,0 +1,3 @@
+Pryecto : LOGO
+@autor  : Pacheco Castillo Isaias - 3CM7 
+        : COMPILADORES

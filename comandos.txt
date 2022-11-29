@@ -1,0 +1,65 @@
+fd n    (Avanzar n)
+    fd 10
+═════════════════════════════════════
+bk n    (Retroceder n )
+    bk 10
+═════════════════════════════════════
+rt n   (Girar angulo -derecha n- )
+    rt 45
+═════════════════════════════════════
+lt n   (Girar angulo -izquierda n-)
+    lt 45
+═════════════════════════════════════
+ct  (Centrar)
+    ct
+═════════════════════════════════════
+cs  (Limpiar pantalla)
+    cs
+═════════════════════════════════════
+pu  (Levantar pluma)
+    pu
+═════════════════════════════════════
+pd  (Colocar pluma)
+    pd
+═════════════════════════════════════
+seth n  (Establecer posicion a n)
+    seth 90
+═════════════════════════════════════
+setpencolor R G B
+    (Establecer color de pluma)
+    setpencolor 0 15 255
+═════════════════════════════════════
+repeat : n { comando(s) }
+    (Repite comando n veces)
+    repeat 3 { fd 100 rt 120 }
+═════════════════════════════════════
+proc nombre ( ) { comando(s) }
+    (Establecer procedimiento )
+    to pen ( ) {
+        repeat 5 { fd 70 rt 72 }
+    }
+═════════════════════════════════════
+func nombre ( ) { comando(s) }
+    (Establecer funcion )
+═════════════════════════════════════
+Definiciones en archivo manDemo
+Ejemplos:
+    cuadrado ( 200 )
+    rcuadrado ( 24 , 200 ) 
+    rtriangulo ( 100 , 500 )
+    pentagono ( 200 )
+    hexagono ( 200 ) 
+    heptagono ( 200 )
+    octagono ( 200 )
+    nonagono ( 200 ) 
+    estrellaDavid ( )
+    figuras ( 10 , 100 )
+    regla ( 100 )
+    tree ( 100 )
+    escalera( 10 )
+    triangulosrec ( 5 )
+    scuadrada( 100 , 10 )
+    espiral ( 100 )
+    hilbert ( 5 , 90)
+    koch ( 5, 90 )
+    copo ( )

@@ -1,0 +1,369 @@
+/* 
+*LOGO
+*@autor : Pacheco Castillo Isaias - 3CM7 
+*COMPILADORES
+*/
+
+
+//Figuras geométricas
+
+/*
+* @param : $1 tamaño de trazo
+* ejem  : cuadrado ( 200 ) 
+*/
+proc cuadrado ( ) {
+    repeat : 4 {
+        fd $1
+        rt 90
+    }
+}
+
+/*
+@param : $1 Repeticiones
+@param : $2 tamaño de trazo
+@ejem  : rcuadrado ( 24 , 200 ) 
+*/
+
+proc rcuadrado ( ) {
+    repeat : $1 {
+        repeat : 4 {    
+            fd $2
+            rt 90
+        }
+        rt 15
+    }
+}
+
+
+/*
+* @param : $1 tamaño de trazo
+* ejem  : triangulo ( 200 ) 
+*/
+proc traingulo ( ) {
+    repeat : 3 {
+        fd  $1
+        rt 120
+    }
+}
+
+/*
+@param : $1 Repeticiones
+@param : $2 tamaño de trazo
+@ejem  : rtriangulo ( 100 , 500 )
+*/
+
+proc rtriangulo ( ) {
+    repeat : $1 {
+        repeat : 3 {    
+            fd $2
+            rt 120
+        }
+        rt 15
+    }
+}
+
+
+/*
+* @param : $1 tamaño de trazo
+* ejem  : pentagono ( 200 ) 
+*/
+
+proc pentagono ( ) {
+    repeat : 5 {
+        fd $1
+        rt 72
+    }
+}
+
+/*
+* @param : $1 tamaño de trazo
+* ejem  : hexagono ( 200 ) 
+*/
+
+proc hexagono ( ) {
+    repeat : 6 {
+        fd $1        
+        rt 60
+    }
+}
+
+
+/*
+* @param : $1 tamaño de trazo
+* ejem  : heptagono ( 200 ) 
+*/
+proc heptagono ( ) {
+    repeat : 7 {
+        fd $1
+        rt 51.42
+    }
+}
+
+/*
+* @param : $1 tamaño de trazo
+* ejem  : octagono ( 200 ) 
+*/
+
+proc octagono ( ) {
+    repeat : 8 {
+        fd $1
+        rt 45 
+    }
+}
+
+/*
+* @param : $1 tamaño de trazo
+* ejem  : nonagono ( 200 ) 
+*/
+
+proc nonagono ( ) {
+    repeat : 9 {
+        fd $1
+        rt 40
+    }
+}
+
+/*
+* @param : $1 tamaño de trazo
+* ejem  : decagono ( 200 ) 
+*/
+
+proc decagono ( ) {
+    repeat : 10 {
+        fd $1
+        rt 36
+    }
+}
+
+/*
+@ejem  : estrellaDavid ( )
+*/
+
+proc estrellaDavid ( ) {
+    setpencolor 0 15 255
+	pu
+	seth 230
+	fd 200
+	pd
+	seth 0
+	fd 300
+	lt 120
+	fd 300
+	lt 120
+	fd 300
+	seth 90
+	pu
+	fd 180
+	seth 0
+	pd
+	fd 300
+	rt 120
+	fd 300
+	rt 120
+	fd 300
+}
+
+//parametro a = 10 pentagrama b = tamaño de trazo
+setpencolor 70 130 180
+
+/*
+@param : $1 Repeticiones
+@param : $2 tamaño de trazo
+@ejem  : figuras ( 10 , 100 ) pentagrama
+*/
+
+proc figuras ( ) {
+    repeat : $1 {
+        fd $2
+        rt ( ( ( $1 - 2) * 180 ) / $1 )
+    }
+}
+
+
+proc reg ( ) {
+    repeat : 3 {
+        rt 270
+        fd 100
+    }
+}
+
+/*
+@param : $1 
+@ejem  : regla ( 100 )
+*/
+
+proc regla ( ) {
+    if ( $1 < 400 ) {
+        fd 4
+        rt 90
+        if ( $2 < 4 ) {
+            bk 5
+            fd 5
+            rt 270
+            regla($1+4, $2+1)
+        }else{
+            bk 10
+            fd 10
+            rt 270
+            regla($1+4, 0)        
+        }
+    } else {
+        reg( )
+    }
+}
+
+/*
+@param : $1 Tamaño de trazo
+@ejem  : tree ( 100 )
+*/
+
+proc tree ( ) {
+    if ( $1 > 5 ){
+        fd $1
+        rt 20
+        tree( $1 - 15 )
+        rt 320
+        tree( $1 - 15 )
+        rt 20
+        fd ( (-1)*($1) )    
+    }
+}
+
+/*
+@param : $1 Tamaño de trazo
+@ejem  : escalera ( 10 )
+*/
+
+proc escalera ( ) {
+    repeat : 10 {
+        seth 270
+        fd $1     
+        seth 0
+        fd $1
+    }
+}
+
+//Triangulos
+
+proc triangulos ( ) {
+    repeat : 3 {
+        fd $1
+        rt 120
+
+        pu
+        rt 120 * 3
+        pd
+    }
+}
+
+/*
+@param : $1 Numero de repeticiones
+@ejem  : triangulosrec ( 5 )
+*/
+
+proc triangulosrec( ){
+    i = 50
+    repeat : $1 {
+        triangulos ( i )
+        i = i + 100
+    }
+}
+
+/*
+@param : $1 Tamaño de trazo
+@param : $2 Numero de repeticiones
+@ejem  : scuadrada( 100 , 10 )
+*/
+
+proc scuadrada( ){
+
+    i = 0
+    x = 0
+    repeat : $2 {
+        
+        if ( i == 1 ) { 
+            seth 90 
+            fd $1
+            x = 2
+        } else { 
+            seth 270
+            fd $1
+            x = 1 
+        }
+        seth 0
+        fd $1
+        i = x
+    }
+}
+
+/*
+@param : $1 Numero de repeticiones
+@ejem  : espiral ( 100 )
+*/
+
+proc espiral ( ) {
+    if ( $1 < 2 ) {
+        fd  $1 * 20 
+    } else {
+        fd  $1 * 20 
+        rt 90
+         espiral ( $1 - 1 )
+    }
+}
+
+/*
+@param : $1 nivel
+@para  : $2 angulo
+@ejem  : hilbert ( 5, 90 )
+*/
+
+func hilbert ( ) {
+    if ( $1 == 0 ){
+        return 0
+    }
+    rt $2
+    hilbert( $1 - 1 , -$2 )
+    fd 100
+    lt $2
+    hilbert( $1 - 1 , $2 )
+    fd 100
+    hilbert( $1 - 1 , $2 )
+    lt $2
+    fd 100
+    hilbert( $1 - 1 , -$2 )
+    rt $2
+    return 1
+}
+
+/*
+@param : $1 nivel
+@para  : $2 tamaño trazo
+@ejem  : koch ( 5, 90 )
+*/
+
+func koch ( ) {
+    if ( $1 == 0 ){
+        fd $2
+    }else {
+        koch( $1 - 1 , $2/3 )
+        lt 60
+        koch( $1 - 1 , $2/3 )
+        lt -120
+        koch( $1 - 1 , $2/3 )
+        lt 60
+        koch( $1 - 1 , $2/3 )
+    }
+    return 1
+}
+
+/*
+@ejem  : copo ( )
+*/
+
+proc copo ( ) {
+    setpencolor 69 189 166
+    repeat : 3{
+        koch ( 4 , 250 )
+        rt 120
+    }
+}

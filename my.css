@@ -1,0 +1,31 @@
+.mybtn{
+  background: rgb(11, 110, 36);
+  color: #fff;
+  border-radius: 20px;
+}
+
+.mybtn:hover{
+  background: #fff;
+  color: #000;
+}
+
+.btnZoom{
+  font-size: 25px;
+}
+
+
+.mylabel{
+  font-size: 15px;
+}
+
+.txtComandos{
+  font-size: 15px;
+}
+
+.txtCodigo{
+  font-size: 25px;
+}
+
+.lblLogs{
+  font-size: 25px;
+}
